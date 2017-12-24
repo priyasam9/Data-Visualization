@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FILES=*.csv
+for file in $FILES  
+do
+	echo $file
+	python graphs.py $file 
+done 
