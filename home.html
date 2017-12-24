@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data Visualization Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+		<h3 style="text-align:center;color:white;">Spectrum Vulnerability Meter</h3>
+	</nav>
+
+<div class="container-fluid">
+  <div class="row content">    
+    <div class="col-sm-12">	
+      <div class="well">
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+		<h3 style="text-align:center;color:white;">Individual View</h3>
+		</nav>
+		<select onchange="document.getElementById('preview').src = this.value" class="btn btn-info" style="margin-left:350px;">
+			<Option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_1.html">770MHz</option> 
+				<optgroup label="Day 1">
+					<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_1.html">Day1-High</option>
+					<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_5.html">Day1-Medium</option>
+					<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_10.html">Day1-Low</option>											
+				</optgroup>
+				<optgroup label="Day 2">
+					<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_1.html">Day2-High</option>
+					<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_5.html">Day2-Medium</option>
+					<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_10.html">Day2-Low</option>											
+				</optgroup>
+				<optgroup label="Day 3">
+					<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_1.html">Day3-High</option>
+					<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_5.html">Day3-Medium</option>
+					<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_10.html">Day3-Low</option>											
+				</optgroup>
+				<optgroup label="Day 4">
+					<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_1.html">Day4-High</option>
+					<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_5.html">Day4-Medium</option>
+					<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_10.html">Day4-Low</option>											
+				</optgroup>
+				<optgroup label="Day 5">
+					<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_1.html">Day5-High</option>
+					<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_5.html">Day5-Medium</option>
+					<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_10.html">Day5-Low</option>											
+				</optgroup>
+				<optgroup label="Day 6">
+					<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_1.html">Day6-High</option>
+					<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_5.html">Day6-Medium</option>
+					<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_10.html">Day6-Low</option>											
+				</optgroup>
+				<optgroup label="Day 7">
+					<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_1.html">Day7-High</option>
+					<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_5.html">Day7-Medium</option>
+					<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_10.html">Day7-Low</option>											
+				</optgroup>
+		</select>
+						
+		<select onchange="document.getElementById('preview').src = this.value" class="btn btn-primary" >
+			<Option value="data/NE_2250/Day1/Day1SubBand%202250MHz_1.html">2250MHz</option>
+			<optgroup label="Day 1">
+				<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_1.html">Day1-High</option>
+				<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_5.html">Day1-Medium</option>
+				<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_10.html">Day1-Low</option>											
+			</optgroup>
+			<optgroup label="Day 2">
+				<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_1.html">Day2-High</option>
+				<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_5.html">Day2-Medium</option>
+				<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_10.html">Day2-Low</option>											
+			</optgroup>
+			<optgroup label="Day 3">
+				<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_1.html">Day3-High</option>
+				<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_5.html">Day3-Medium</option>
+				<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_10.html">Day3-Low</option>											
+			</optgroup>
+			<optgroup label="Day 4">
+				<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_1.html">Day4-High</option>
+				<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_5.html">Day4-Medium</option>
+				<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_10.html">Day4-Low</option>											
+			</optgroup>
+			<optgroup label="Day 5">
+				<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_1.html">Day5-High</option>
+				<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_5.html">Day5-Medium</option>
+				<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_10.html">Day5-Low</option>											
+			</optgroup>
+			<optgroup label="Day 6">
+				<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_1.html">Day6-High</option>
+				<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_5.html">Day6-Medium</option>
+				<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_10.html">Day6-Low</option>											
+			</optgroup>
+			<optgroup label="Day 7">
+				<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_1.html">Day7-High</option>
+				<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_5.html">Day7-Medium</option>
+				<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_10.html">Day7-Low</option>											
+			</optgroup>
+		</select>
+		<select onchange="document.getElementById('preview').src = this.value" class="btn btn-primary">						
+			<Option value="data/NE3750/Day1/Day1SubBand%203750MHz_1.html">3750MHz</option>
+			<optgroup label="Day 1">
+				<option value="data/NE3750/Day1/Day1SubBand%203750MHz_1.html">Day1-High</option>
+				<option value="data/NE3750/Day1/Day1SubBand%203750MHz_5.html">Day1-Medium</option>
+				<option value="data/NE3750/Day1/Day1SubBand%203750MHz_10.html">Day1-Low</option>											
+			</optgroup>
+			<optgroup label="Day 2">
+				<option value="data/NE3750/Day2/Day2SubBand%203750MHz_1.html">Day2-High</option>
+				<option value="data/NE3750/Day2/Day2SubBand%203750MHz_5.html">Day2-Medium</option>
+				<option value="data/NE3750/Day2/Day2SubBand%203750MHz_10.html">Day2-Low</option>											
+			</optgroup>
+			<optgroup label="Day 3">
+				<option value="data/NE3750/Day3/Day3SubBand%203750MHz_1.html">Day3-High</option>
+				<option value="data/NE3750/Day3/Day3SubBand%203750MHz_5.html">Day3-Medium</option>
+				<option value="data/NE3750/Day3/Day3SubBand%203750MHz_10.html">Day3-Low</option>											
+			</optgroup>
+			<optgroup label="Day 4">
+				<option value="data/NE3750/Day4/Day4SubBand%203750MHz_1.html">Day4-High</option>
+				<option value="data/NE3750/Day4/Day4SubBand%203750MHz_5.html">Day4-Medium</option>
+				<option value="data/NE3750/Day4/Day4SubBand%203750MHz_10.html">Day4-Low</option>											
+			</optgroup>
+			<optgroup label="Day 5">
+				<option value="data/NE3750/Day5/Day5SubBand%203750MHz_1.html">Day5-High</option>
+				<option value="data/NE3750/Day5/Day5SubBand%203750MHz_5.html">Day5-Medium</option>
+				<option value="data/NE3750/Day5/Day5SubBand%203750MHz_10.html">Day5-Low</option>											
+			</optgroup>
+			<optgroup label="Day 6">
+				<option value="data/NE3750/Day6/Day6SubBand%203750MHz_1.html">Day6-High</option>
+				<option value="data/NE3750/Day6/Day6SubBand%203750MHz_5.html">Day6-Medium</option>
+				<option value="data/NE3750/Day6/Day6SubBand%203750MHz_10.html">Day6-Low</option>											
+			</optgroup>
+			<optgroup label="Day 7">
+				<option value="data/NE3750/Day7/Day7SubBand%203750MHz_1.html">Day7-High</option>
+				<option value="data/NE3750/Day7/Day7SubBand%203750MHz_5.html">Day7-Medium</option>
+				<option value="data/NE3750/Day7/Day7SubBand%203750MHz_10.html">Day7-Low</option>											
+			</optgroup>
+		</select>
+		<select onchange="document.getElementById('preview').src = this.value" class="btn btn-info">	
+			<Option value="data/NE5250/Day1/Day1SubBand%205250MHz_1.html">5250MHz</option>
+			<optgroup label="Day 1">
+				<option value="data/NE5250/Day1/Day1SubBand%205250MHz_1.html">Day1-High</option>
+				<option value="data/NE5250/Day1/Day1SubBand%205250MHz_5.html">Day1-Medium</option>
+				<option value="data/NE5250/Day1/Day1SubBand%205250MHz_10.html">Day1-Low</option>											
+			</optgroup>
+			<optgroup label="Day 2">
+				<option value="data/NE5250/Day2/Day2SubBand%205250MHz_1.html">Day2-High</option>
+				<option value="data/NE5250/Day2/Day2SubBand%205250MHz_5.html">Day2-Medium</option>
+				<option value="data/NE5250/Day2/Day2SubBand%205250MHz_10.html">Day2-Low</option>											
+			</optgroup>
+			<optgroup label="Day 3">
+				<option value="data/NE5250/Day3/Day3SubBand%205250MHz_1.html">Day3-High</option>
+				<option value="data/NE5250/Day3/Day3SubBand%205250MHz_5.html">Day3-Medium</option>
+				<option value="data/NE5250/Day3/Day3SubBand%205250MHz_10.html">Day3-Low</option>											
+			</optgroup>
+		</select>
+		<form action="NewHeatMap.py" method="post">
+		 Channel Number(0-8191):
+	     <input type="text" value="100" name="ChannelNumber"/><br>   
+		 <input type="radio" value="770" name="SubBand">770MHz<br>
+		 <input type="radio" value="2250" name="SubBand">2250MHz<br>
+		 <input type="radio" value="3750" name="SubBand">3750MHz<br>
+		 <input type="radio" value="5250" name="SubBand">5250MHz<br>
+		 <input type="submit" value="Submit"/>
+        </form>
+		<iframe width="100%" height="480px" frameborder="0" scrolling="no" id="preview" src="data/NE_2250/Day1/Day1SubBand%202250MHz_1.html" ></iframe>
+		
+      </div>
+	  
+<!--Comparison-->
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+			<h3 style="text-align:center;color:white;">Comparison View</h3>
+		</nav>		
+		
+		<div class="row" style="text-align:center;">
+			<div class="col-sm-6">
+				<div class="well">
+					<div class="panel panel-default"><div class="panel-body">2250 MHz</div></div>					
+						<select onchange="document.getElementById('preview1').src = this.value" class="btn btn-info"> 
+							<optgroup label="Day 1">
+								<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_1.html">Day1-High</option>
+								<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_5.html">Day1-Medium</option>
+								<option value="data/NE_2250/Day1/Day1SubBand%202250MHz_10.html">Day1-Low</option>											
+							</optgroup>
+							<optgroup label="Day 2">
+								<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_1.html">Day2-High</option>
+								<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_5.html">Day2-Medium</option>
+								<option value="data/NE_2250/Day2/Day2SubBand%202250MHz_10.html">Day2-Low</option>											
+							</optgroup>
+							<optgroup label="Day 3">
+								<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_1.html">Day3-High</option>
+								<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_5.html">Day3-Medium</option>
+								<option value="data/NE_2250/Day3/Day3SubBand%202250MHz_10.html">Day3-Low</option>											
+							</optgroup>
+							<optgroup label="Day 4">
+								<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_1.html">Day4-High</option>
+								<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_5.html">Day4-Medium</option>
+								<option value="data/NE_2250/Day4/Day4SubBand%202250MHz_10.html">Day4-Low</option>											
+							</optgroup>
+							<optgroup label="Day 5">
+								<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_1.html">Day5-High</option>
+								<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_5.html">Day5-Medium</option>
+								<option value="data/NE_2250/Day5/Day5SubBand%202250MHz_10.html">Day5-Low</option>											
+							</optgroup>
+							<optgroup label="Day 6">
+								<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_1.html">Day6-High</option>
+								<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_5.html">Day6-Medium</option>
+								<option value="data/NE_2250/Day6/Day6SubBand%202250MHz_10.html">Day6-Low</option>											
+							</optgroup>
+							<optgroup label="Day 7">
+								<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_1.html">Day7-High</option>
+								<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_5.html">Day7-Medium</option>
+								<option value="data/NE_2250/Day7/Day7SubBand%202250MHz_10.html">Day7-Low</option>											
+							</optgroup>
+						</select>
+						<iframe width="100%" height="480px" frameborder="0" scrolling="no" id="preview1" src="data/NE_2250/Day1/Day1SubBand%202250MHz_1.html" ></iframe>												
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="well">
+					<div class="panel panel-default"><div class="panel-body">770 MHz</div></div>
+            			<select onchange="document.getElementById('preview2').src = this.value" class="btn btn-info"> 
+							<optgroup label="Day 1">
+								<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_1.html">Day1-High</option>
+								<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_5.html">Day1-Medium</option>
+								<option value="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_10.html">Day1-Low</option>											
+							</optgroup>
+							<optgroup label="Day 2">
+								<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_1.html">Day2-High</option>
+								<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_5.html">Day2-Medium</option>
+								<option value="data/NE770/Day2_770MHz/Day2SubBand%20770MHz_10.html">Day2-Low</option>											
+							</optgroup>
+							<optgroup label="Day 3">
+								<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_1.html">Day3-High</option>
+								<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_5.html">Day3-Medium</option>
+								<option value="data/NE770/Day3_770MHz/Day3SubBand%20770MHz_10.html">Day3-Low</option>											
+							</optgroup>
+							<optgroup label="Day 4">
+								<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_1.html">Day4-High</option>
+								<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_5.html">Day4-Medium</option>
+								<option value="data/NE770/Day4_770MHz/Day4SubBand%20770MHz_10.html">Day4-Low</option>											
+							</optgroup>
+							<optgroup label="Day 5">
+								<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_1.html">Day5-High</option>
+								<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_5.html">Day5-Medium</option>
+								<option value="data/NE770/Day5_770MHz/Day5SubBand%20770MHz_10.html">Day5-Low</option>											
+							</optgroup>
+							<optgroup label="Day 6">
+								<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_1.html">Day6-High</option>
+								<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_5.html">Day6-Medium</option>
+								<option value="data/NE770/Day6_770MHz/Day6SubBand%20770MHz_10.html">Day6-Low</option>											
+							</optgroup>
+							<optgroup label="Day 7">
+								<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_1.html">Day7-High</option>
+								<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_5.html">Day7-Medium</option>
+								<option value="data/NE770/Day7_770MHz/Day7SubBand%20770MHz_10.html">Day7-Low</option>											
+							</optgroup>
+						</select>
+						<iframe width="100%" height="480px" frameborder="0" scrolling="no" id="preview2" src="data/NE770/Day1_770MHz/Day1SubBand%20770MHz_1.html" ></iframe>
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="well">
+					<div class="panel panel-default"><div class="panel-body">3750 MHz</div></div>
+						<select onchange="document.getElementById('preview3').src = this.value" class="btn btn-info"> 
+							<optgroup label="Day 1">
+								<option value="data/NE3750/Day1/Day1SubBand%203750MHz_1.html">Day1-High</option>
+								<option value="data/NE3750/Day1/Day1SubBand%203750MHz_5.html">Day1-Medium</option>
+								<option value="data/NE3750/Day1/Day1SubBand%203750MHz_10.html">Day1-Low</option>											
+							</optgroup>
+							<optgroup label="Day 2">
+								<option value="data/NE3750/Day2/Day2SubBand%203750MHz_1.html">Day2-High</option>
+								<option value="data/NE3750/Day2/Day2SubBand%203750MHz_5.html">Day2-Medium</option>
+								<option value="data/NE3750/Day2/Day2SubBand%203750MHz_10.html">Day2-Low</option>											
+							</optgroup>
+							<optgroup label="Day 3">
+								<option value="data/NE3750/Day3/Day3SubBand%203750MHz_1.html">Day3-High</option>
+								<option value="data/NE3750/Day3/Day3SubBand%203750MHz_5.html">Day3-Medium</option>
+								<option value="data/NE3750/Day3/Day3SubBand%203750MHz_10.html">Day3-Low</option>											
+							</optgroup>
+							<optgroup label="Day 4">
+								<option value="data/NE3750/Day4/Day4SubBand%203750MHz_1.html">Day4-High</option>
+								<option value="data/NE3750/Day4/Day4SubBand%203750MHz_5.html">Day4-Medium</option>
+								<option value="data/NE3750/Day4/Day4SubBand%203750MHz_10.html">Day4-Low</option>											
+							</optgroup>
+							<optgroup label="Day 5">
+								<option value="data/NE3750/Day5/Day5SubBand%203750MHz_1.html">Day5-High</option>
+								<option value="data/NE3750/Day5/Day5SubBand%203750MHz_5.html">Day5-Medium</option>
+								<option value="data/NE3750/Day5/Day5SubBand%203750MHz_10.html">Day5-Low</option>											
+							</optgroup>
+							<optgroup label="Day 6">
+								<option value="data/NE3750/Day6/Day6SubBand%203750MHz_1.html">Day6-High</option>
+								<option value="data/NE3750/Day6/Day6SubBand%203750MHz_5.html">Day6-Medium</option>
+								<option value="data/NE3750/Day6/Day6SubBand%203750MHz_10.html">Day6-Low</option>											
+							</optgroup>
+							<optgroup label="Day 7">
+								<option value="data/NE3750/Day7/Day7SubBand%203750MHz_1.html">Day7-High</option>
+								<option value="data/NE3750/Day7/Day7SubBand%203750MHz_5.html">Day7-Medium</option>
+								<option value="data/NE3750/Day7/Day7SubBand%203750MHz_10.html">Day7-Low</option>											
+							</optgroup>
+						</select>						
+						<iframe width="100%" height="480px" frameborder="0" scrolling="no" id="preview3" src="data/NE3750/Day1/Day1SubBand%203750MHz_1.html" ></iframe>
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<div class="well">
+					<div class="panel panel-default"><div class="panel-body">5250 MHz</div></div>					
+						<select onchange="document.getElementById('preview4').src = this.value" class="btn btn-info"> 
+							<optgroup label="Day 1">
+								<option value="data/NE5250/Day1/Day1SubBand%205250MHz_1.html">Day1-High</option>
+								<option value="data/NE5250/Day1/Day1SubBand%205250MHz_5.html">Day1-Medium</option>
+								<option value="data/NE5250/Day1/Day1SubBand%205250MHz_10.html">Day1-Low</option>											
+							</optgroup>
+							<optgroup label="Day 2">
+								<option value="data/NE5250/Day2/Day2SubBand%205250MHz_1.html">Day2-High</option>
+								<option value="data/NE5250/Day2/Day2SubBand%205250MHz_5.html">Day2-Medium</option>
+								<option value="data/NE5250/Day2/Day2SubBand%205250MHz_10.html">Day2-Low</option>											
+							</optgroup>
+							<optgroup label="Day 3">
+								<option value="data/NE5250/Day3/Day3SubBand%205250MHz_1.html">Day3-High</option>
+								<option value="data/NE5250/Day3/Day3SubBand%205250MHz_5.html">Day3-Medium</option>
+								<option value="data/NE5250/Day3/Day3SubBand%205250MHz_10.html">Day3-Low</option>											
+							</optgroup>
+						</select>
+						<iframe width="100%" height="480px" frameborder="0" scrolling="no" id="preview4" src="data/NE5250/Day1/Day1SubBand%205250MHz_1.html" ></iframe>
+				</div>
+			</div>
+		</div>
+		
+	<!--Metadata-->
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+			<h3 style="text-align:center;color:white;">Metadata</h3>
+		</nav>		
+		<div class="container-fluid"style="text-align:center;">
+		  <div class="row content">    
+			<div class="col-sm-12">	
+			  <div class="well">				
+				<object width="1000px" height="400" style="margin-left:75px" data="data\Metadata.pdf"></object>
+			  </div>
+			</div>
+		  </div>
+		</div>
+<!--Footer--->
+	<div class="container">    
+        <div class="text-center center-block">
+            <p class="txt-railway">&copy; 2017 Priyanka Samanta & Ari Mermelstein <br> The Graduate Center, CUNY</p>
+        </div>
+	</div>
+	
+</body>
+</html>
